@@ -1,0 +1,30 @@
+{
+  "name": "db2-wrapper",
+  "version": "0.0.1",
+  "description": "db2 connector with credentials support",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pbriones/db2-wrapper.git"
+  },
+  "keywords": [
+    "db2"
+  ],
+  "author": "Phil Briones <satire99@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pbriones/db2-wrapper/issues"
+  },
+  "homepage": "https://github.com/pbriones/db2-wrapper#readme",
+  "dependencies": {
+    "ibm_db": "^1.0.0",
+    "service-credentials": "^1.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
