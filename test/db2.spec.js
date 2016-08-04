@@ -15,6 +15,7 @@ describe('db2', function () {
   this.timeout(10000);
   it('.constructor', function () {
     expect(db2).to.be.an('object');
+    console.log(db2);
   })
   it('.query', function(done){
     db2.query('select * from db2admin.ACT', (err, result)=>{
