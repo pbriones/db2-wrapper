@@ -1,20 +1,37 @@
 'use strict';
 var expect = require('chai').expect;
-var query = require('../lib/query/query');
+var select = require('../lib/query/select');
 
-describe('query',function(){
-	it('should construct a query from structured input, no aggregation',function(done){
-		var input = {
+describe.only('query',function(){
+	it('should construct a query with no aggregation',function(done){
+		let input = {
 			table: 'example',
-			columns: ['id','x','y'],
+			columns: 'id',
 			condition: 'x=y'
 		}
-		query.constructQuery(input,function(err,response){
+		select.constructQuery(input,function(err,response){
 			if(err) console.error();
 			expect(err).to.be.null;
 			expect(response).to.be.a('object');
 			expect(response).to.have.property('query');
 			console.log(response.query);
+			expect(response.query).to.be.equal('SELECT id FROM example WHERE x=y')
+			done();
 		});
+	}),
+	it('should construct a query with aggregation',function(done){
+		let input = {
+			table: 'example',
+			columns: ['id','SUM(x,y,z)','w'],
+		}
+		select.constructQuery(input,function(err,response){
+			if(err) console.error();
+			expect(err).to.be.null;
+			expect(response).to.be.a('object');
+			expect(response).to.have.property('query');
+			console.log(response.query);
+			expect(response.query).to.be.equal('SELECT id, SUM(x,y,z), w FROM example GROUP BY id, w');
+			done();
+		})
 	})
 })
