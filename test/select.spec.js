@@ -30,7 +30,7 @@ describe('select',function(){
 			expect(response).to.be.a('object');
 			expect(response).to.have.property('query');
 			console.log(response.query);
-			expect(response.query).to.be.equal('SELECT id, SUM(x,y,z), w FROM example GROUP BY id, w');
+			expect(response.query).to.be.equal('SELECT id,SUM(x,y,z),w FROM example GROUP BY id,w');
 			done();
 		})
 	})
