@@ -2,7 +2,7 @@
 var expect = require('chai').expect;
 var select = require('../lib/query/select');
 
-describe.only('select',function(){
+describe('select',function(){
 	it('should construct a query with no aggregation',function(done){
 		let input = {
 			table: 'example',
