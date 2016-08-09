@@ -5,9 +5,9 @@ var select = require('../lib/query/select');
 describe('select',function(){
 	it('should construct a query with no aggregation',function(done){
 		let input = {
-			table: 'example',
-			columns: 'id',
-			condition: 'x=y'
+			FROM: 'example',
+			SELECT: 'id',
+			WHERE: 'x=y'
 		}
 		select.constructQuery(input,function(err,response){
 			if(err) console.error();
@@ -21,8 +21,8 @@ describe('select',function(){
 	}),
 	it('should construct a query with aggregation',function(done){
 		let input = {
-			table: 'example',
-			columns: ['id','SUM(x,y,z)','w']
+			FROM: 'example',
+			SELECT: ['id','SUM(x,y,z)','w']
 		}
 		select.constructQuery(input,function(err,response){
 			if(err) console.error();

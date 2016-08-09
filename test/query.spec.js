@@ -5,7 +5,7 @@ var query = require('../lib/query/query');
 describe('query', function () {
 	it('should construct insert statement with multiple columns', function (done) {
 		let input = {
-			table: "example",
+			FROM: "example",
 			columns: ["col1", "col2", "col3"],
 			values: ["val1", "val2", "val3"]
 		}
@@ -20,7 +20,7 @@ describe('query', function () {
 	})
 	it('should construct insert with one column', function (done) {
 		let input = {
-			table: "example",
+			FROM: "example",
 			columns: "col",
 			values: "val"
 		}
@@ -35,10 +35,10 @@ describe('query', function () {
 	})
 	it('should construct update', function (done) {
 		let input = {
-			table: "example",
+			FROM: "example",
 			columns: ["col1", "col2", "col3"],
 			values: ["val1", "val2", "val3"],
-			condition: "x=y"
+			WHERE: "x=y"
 		}
 		query.constructUpdate(input, function (err, response) {
 			if (err) console.error();
