@@ -1,6 +1,6 @@
 {
   "name": "db2-wrapper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "db2 connector with credentials support",
   "main": "index.js",
   "scripts": {
