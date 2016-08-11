@@ -13,7 +13,7 @@ describe.only('query-builder',function(){
 		}
 		builder.buildQuery(input,function(err,response){
 			if(err) console.error();
-			expect(response.query).to.be.equal('SELECT id FROM example WHERE x=y');
+			expect(response).to.be.equal('SELECT id FROM example WHERE x=y');
 			console.log(response);
 			done();
 		})
@@ -27,7 +27,7 @@ describe.only('query-builder',function(){
 		}
 		builder.buildQuery(input,function(err,response){
 			if(err) console.error();
-			expect(response.query).to.be.equal('UPDATE example SET(col1,col2,col3)=(val1,val2,val3) WHERE x=y');
+			expect(response).to.be.equal('UPDATE example SET(col1,col2,col3)=(val1,val2,val3) WHERE x=y');
 			console.log(response);
 			done();
 		})
@@ -40,7 +40,7 @@ describe.only('query-builder',function(){
 		}
 		builder.buildQuery(input,function(err,response){
 			if(err) console.error();
-			expect(response.query).to.be.equal('INSERT INTO example(col1,col2,col3) VALUES(val1,val2,val3)');
+			expect(response).to.be.equal('INSERT INTO example(col1,col2,col3) VALUES(val1,val2,val3)');
 			console.log(response);
 			done();
 		})

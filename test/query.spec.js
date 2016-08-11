@@ -11,10 +11,8 @@ describe('query', function () {
 		}
 		query.constructInsert(input, function (err, response) {
 			if (err) console.error();
-			expect(response).to.be.a('object');
-			expect(response).to.have.property('query');
-			expect(response.query).to.be.equal('INSERT INTO example(col1,col2,col3) VALUES(val1,val2,val3)');
-			console.log(response.query);
+			expect(response).to.be.equal('INSERT INTO example(col1,col2,col3) VALUES(val1,val2,val3)');
+			console.log(response);
 			done();
 		})
 	})
@@ -26,10 +24,8 @@ describe('query', function () {
 		}
 		query.constructInsert(input, function (err, response) {
 			if (err) console.error();
-			expect(response).to.be.a('object');
-			expect(response).to.have.property('query');
-			expect(response.query).to.be.equal('INSERT INTO example(col) VALUES(val)');
-			console.log(response.query);
+			expect(response).to.be.equal('INSERT INTO example(col) VALUES(val)');
+			console.log(response);
 			done();
 		})
 	})
@@ -42,10 +38,8 @@ describe('query', function () {
 		}
 		query.constructUpdate(input, function (err, response) {
 			if (err) console.error();
-			expect(response).to.be.a('object');
-			expect(response).to.have.property('query');
-			expect(response.query).to.be.equal('UPDATE example SET(col1,col2,col3)=(val1,val2,val3) WHERE x=y');
-			console.log(response.query);
+			expect(response).to.be.equal('UPDATE example SET(col1,col2,col3)=(val1,val2,val3) WHERE x=y');
+			console.log(response);
 			done();
 		})
 	})
